@@ -7,6 +7,6 @@ function MOEADinit()
     mop = testmop(fun, dimension);
     
     %种群规模 100， 方法 te
-    %pareto = moead(mop, 'popsize', 100, 'niche', 20, 'iteration', 200, 'method', 'te');
+    pareto = moead(mop, 'popsize', 100, 'niche', 20, 'iteration', 200, 'method', 'te');
 
 end
