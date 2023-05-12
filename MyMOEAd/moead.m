@@ -76,14 +76,14 @@ function subproblems = evolve(subproblems, mop, params)
     global idealPoint;
 
     for i = 1:length(subproblems)
-        ind = genetic_op(subproblems, i, mop.domin, params);
+        ind = genetic_op(subproblems, i, mop.domain, params);
         [obj, ind] = evaluate(mop, ind);
 
         idealPoint = min(idealPoint, obj);
 
         % Updata the neighbours.
         neighborIndex = subproblems(i).neighbour;
-        subproblems(neighborIndex) = update(subproblems(neighborIndex), ind, idealPoint);
+        subproblems(neighborIndex) = updata(subproblems(neighborIndex), ind, idealPoint);
 
         clear ind obj neighborIndex;
     end
@@ -93,11 +93,11 @@ function subp = updata(subp, ind, idealPoint)
     global params;
 
     newObj = subObjective([subp.weight], ind.objective, idealPoint, params.dmethod);
-    oops = [subp.curPoint];
+    oops = [subp.curpoint];
     oldObj = subObjective([subp.weight], [oops.objective], idealPoint, params.dmethod);
 
     C = newObj < oldObj;
-    [subp(C).curPoint] = deal(ind);
+    [subp(C).curpoint] = deal(ind);
     clear C newObj oops oldObj;
 end
 

@@ -1,5 +1,5 @@
 function subp = init_weights(popsize, niche, objDim)
-    subp = []
+    subp = [];
     for i = 0 : popsize
         if objDim == 2
             p = struct('weights', [], 'neighbour', [], 'optimal', Inf, ...
