@@ -1,11 +1,12 @@
 
+%git pull origin master
+
 %git reset --hard HEAD^^
 %git clean -df
 %git status
 
 %git add .
-%git commit --amend
-%git pull origin master
+%git commit -s
 %git push origin master
 
 
