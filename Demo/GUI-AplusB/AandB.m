@@ -89,8 +89,6 @@ if (isempty(input));
 
 end
 
-guidata(hObject,handles);
-
 
 % --- Executes during object creation, after setting all properties.
 function edit1_CreateFcn(hObject, eventdata, handles)
@@ -121,7 +119,6 @@ if (isempty(input));
 
 end
 
-guidata(hObject,handles);
 
 % --- Executes during object creation, after setting all properties.
 function edit2_CreateFcn(hObject, eventdata, handles)
@@ -147,8 +144,6 @@ b = get(handles.edit2,'String');
 c= num2str(str2num(a)+str2num(b));
 
 set(handles.edit3,'String',c);
-
-guidata(hObject,handles);
 
 
 
