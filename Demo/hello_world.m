@@ -1,2 +1,2 @@
 
-print("hello SUSTech")
+print("hello SUSTech!")
