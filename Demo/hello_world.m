@@ -1,5 +1,4 @@
 
-
 %git reset --hard HEAD^^
 %git clean -df
 %git status
