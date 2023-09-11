@@ -48,15 +48,25 @@ end
 
 a = mySort([4, 8, 1, 3, 8])
 
+
 clc
+clear
 
+H1 = 5; M = 3;
 
-power = @(x, n)
+% W1 = nchoosek(1:H1+M-1,M-1)
+% size(W1 , 1)
+% W2 = repmat(0:M-2,nchoosek(H1+M-1,M-1),1)
+% size(W2 , 1)
+W = nchoosek(1:H1+M-1,M-1) - repmat(0:M-2,nchoosek(H1+M-1,M-1),1) - 1
+% size(W , 1)
+[W,zeros(size(W,1),1)+H1]
+[zeros(size(W,1),1),W]
+([W,zeros(size(W,1),1)+H1]-[zeros(size(W,1),1),W])
+W = ([W,zeros(size(W,1),1)+H1]-[zeros(size(W,1),1),W])/H1
 
-
-
-
-
+clc
+clear
 
 datetime
 
