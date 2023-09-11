@@ -171,6 +171,7 @@ classdef PROBLEM < handle & matlab.mixin.Heterogeneous
             Type  = arrayfun(@(i)find(obj.encoding==i),1:5,'UniformOutput',false);
             index = [Type{1:3}];
             if ~isempty(index)
+                % 小于lower，则为lower，大于upper，则为upper
                 PopDec(:,index) = max(min(PopDec(:,index),repmat(obj.upper(index),size(PopDec,1),1)),repmat(obj.lower(index),size(PopDec,1),1));
             end
             index = [Type{2:5}];

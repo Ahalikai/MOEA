@@ -54,19 +54,26 @@ clear
 
 H1 = 5; M = 3;
 
-% W1 = nchoosek(1:H1+M-1,M-1)
-% size(W1 , 1)
-% W2 = repmat(0:M-2,nchoosek(H1+M-1,M-1),1)
-% size(W2 , 1)
+W1 = nchoosek(1:H1+M-1,M-1)
+size(W1 , 1)
+W2 = repmat(0:M-2,nchoosek(H1+M-1,M-1),1)
+size(W2 , 1)
 W = nchoosek(1:H1+M-1,M-1) - repmat(0:M-2,nchoosek(H1+M-1,M-1),1) - 1
 % size(W , 1)
 [W,zeros(size(W,1),1)+H1]
 [zeros(size(W,1),1),W]
 ([W,zeros(size(W,1),1)+H1]-[zeros(size(W,1),1),W])
-W = ([W,zeros(size(W,1),1)+H1]-[zeros(size(W,1),1),W])/H1
+W = ([W,zeros(size(W,1),1)+H1]-[zeros(size(W,1),1),W])
 
-clc
-clear
+N = size(W,1)
+T = ceil(N/10)
+
+B = pdist2(W, W)
+[~,B] = sort(B,2)
+B = B(:,1:T)
+
+% clc
+% clear
 
 datetime
 
