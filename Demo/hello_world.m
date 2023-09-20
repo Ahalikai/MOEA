@@ -72,10 +72,72 @@ B = pdist2(W, W)
 [~,B] = sort(B,2)
 B = B(:,1:T)
 
-% clc
-% clear
+clc
+clear
 
 datetime
+
+
+clc,clear
+L1=[0,0;0,200]; 
+plot(L1(:,1),L1(:,2));hold on 
+% text(0,4,'x_1=0','color','b');
+
+L2=[0,0;200,0]; 
+plot(L2(:,1),L2(:,2));hold on
+% text(4,0,'x_2=0','color','b');
+
+L3=[0,120;60,0]; 
+plot(L3(:,1),L3(:,2), 'Linewidth', 3);hold on
+text(0,120,'10x_1+5x_2=600','color','b');
+
+L4=[0,30;100,0]; 
+plot(L4(:,1),L4(:,2), 'Linewidth', 3);hold on
+text(100,0,'6x_1+20x_2=600','color','b');
+
+L5=[0,60;600/8,0]
+plot(L5(:,1),L5(:,2), 'Linewidth', 3);hold on
+text(0,60,'8x_1+10x_2=600','color','b');
+
+% x=[0 0 1 4 2]'; 
+% y=[0 2 4 1 0]'; 
+% fill(x,y,'r'); 
+
+xlabel('x_1')
+ylabel('x_2')
+
+a=(53*20+13*30)
+
+
+% z0=[0,30;20,0]; 
+% plot(z0(:,1),z0(:,2),'k--','LineWidth',2);
+% text(4,1,'z=-3')
+% 
+% z1=[2,0;3.5,1.5]; 
+% plot(z1(:,1),z1(:,2),'k--','LineWidth',2);
+% text(3.5,1.5,'z=-2')
+% 
+% z2=[0,0;2.5,2.5]; 
+% plot(z2(:,1),z2(:,2),'k--','LineWidth',2);
+% text(2.5,2.5,'z=0')
+% 
+% z3=[0,2;1.5,3.5]; 
+% plot(z3(:,1),z3(:,2),'k--','LineWidth',2);
+% text(1.5,3.5,'z=2')
+% 
+% z4=[0,3;1,4]; 
+% plot(z4(:,1),z4(:,2),'k--','LineWidth',2);
+% text(0,3,'z=3')
+
+% text(1,4,'X','color','r','fontsize',20);
+
+% c = [20; 30];
+% b = [600; 600; 600];
+% a = [10, 5; 6, 20; 8, 10];
+% lb = zeros(2, 1);
+% [x, fval] = linprog(-c, a, b, [], [], lb)
+% y = -fval
+
 
 % function a = mySort(a)
 %     len = length(a);
