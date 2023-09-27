@@ -1,4 +1,4 @@
-classdef MOEADDRAAha < ALGORITHM
+classdef MOEADDRAha < ALGORITHM
 % <multi/many> <real/integer>
 % MOEA/D with dynamical resource allocation
 
@@ -43,7 +43,7 @@ classdef MOEADDRAAha < ALGORITHM
                     % Choose I
                     Bounday = find(sum(W<1e-3,2)==Problem.M-1)';
                     I = [Bounday,TournamentSelection(10,floor(Problem.N/5)-length(Bounday),-Pi)];
-                    sort(I)
+                    sort(I);
 
                     % For each solution in I
                     for i = I
